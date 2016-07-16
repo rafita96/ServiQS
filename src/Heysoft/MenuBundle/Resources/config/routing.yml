@@ -1,0 +1,3 @@
+heysoft_menu_homepage:
+    path:     /
+    defaults: { _controller: HeysoftMenuBundle:Default:index }

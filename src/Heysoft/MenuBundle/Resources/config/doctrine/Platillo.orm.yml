@@ -1,0 +1,53 @@
+Heysoft\MenuBundle\Entity\Platillo:
+    type: entity
+    table: null
+    repositoryClass: Heysoft\MenuBundle\Repository\PlatilloRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        platillo:
+            type: string
+            length: 255
+            unique: true
+        precio:
+            type: float
+        status:
+            type: boolean
+        duracion:
+            type: integer
+        ingredientes:
+            type: text
+        imagen:
+            type: string
+            length: 255
+            nullable: true
+        cdia:
+            type: boolean
+    manyToMany:
+        platilloschicos:
+            targetEntity: PlatilloChico
+            inversedBy: platillos
+            joinTable:
+                name: platillo_platillochico
+                joinColumns:
+                    platillo_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    platillochico_id:
+                        referencedColumnName: id
+        bebidas:
+            targetEntity: Bebida
+            inversedBy: platillos
+            joinTable:
+                name: platillo_bebida
+                joinColumns:
+                    platillo_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    bebida_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }
