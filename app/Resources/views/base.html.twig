@@ -15,10 +15,10 @@
 
         <!-- Bootstrap Core CSS -->
         {% block stylesheets %}
-        <link href="bundles/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ asset('bundles/css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="bundles/css/business-casual.css" rel="stylesheet">
+        <link href="{{ asset('bundles/css/business-casual.css') }}" rel="stylesheet">
         {% endblock %}
 
         <!-- Fonts -->
@@ -83,10 +83,10 @@
         {% block javascripts %}
         <!-- Hace posible el funcionamiento de JavaScript -->
         <!-- jQuery -->
-        <script src="js/jquery.js"></script>
+        <script src="{{ asset('bundles/js/jquery.js') }}"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{{ asset('bundles/js/bootstrap.min.js') }}"></script>
 
         <!-- Script to Activate the Carousel -->
         <script>

@@ -101,11 +101,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // heysoft_menu_homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'heysoft_menu_homepage');
-            }
-
+        if ($pathinfo === '/index') {
             return array (  '_controller' => 'Heysoft\\MenuBundle\\Controller\\DefaultController::indexAction',  '_route' => 'heysoft_menu_homepage',);
         }
 
