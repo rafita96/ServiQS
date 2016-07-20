@@ -57,9 +57,13 @@
                         <li>
                             <a href="#">Comida del dia</a>
                         </li>
-
-                        <li>
-                            <a href="#">Menu</a>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                            <span class="caret"></span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                {{ render(controller('HeysoftMenuBundle:Categoria:CategoriasExistentes')) }}
+                            </ul>
                         </li>
 
                         <li>
@@ -69,7 +73,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">Cerrar Sesi&oacute;n</a>
+                            <a href="#" title="Cerrar Sesión"><span class="glyphicon glyphicon-off"></span></a>
                         </li>
                     </ul>
                 </div>
@@ -77,7 +81,7 @@
             </div>
             <!-- /.container -->
             </nav>
-            {% block body %}{% endblock %} 
+                {% block body %}{% endblock %} 
         </div>
         
         {% block javascripts %}
@@ -93,6 +97,17 @@
         $('.carousel').carousel({
             interval: 5000 //changes the speed
         })
+        </script>
+
+        <script>
+            function request()
+            {
+                alert("Bien hecho");
+                // var xhttp = new XMLHttpRequest();
+                // var url = "operador.php?op=".concat(op);
+                // xhttp.open("GET",url,true);
+                // xhttp.send();
+            }
         </script>
         {% endblock %}
 

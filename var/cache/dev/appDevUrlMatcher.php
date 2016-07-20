@@ -105,6 +105,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Heysoft\\MenuBundle\\Controller\\DefaultController::indexAction',  '_route' => 'heysoft_menu_homepage',);
         }
 
+        // categoria
+        if (preg_match('#^/(?P<nombre>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'categoria')), array (  '_controller' => 'Heysoft\\MenuBundle\\Controller\\DefaultController::categoriaAction',));
+        }
+
+        // heysoft_menu_agregar_carrito
+        if ($pathinfo === '/carrito/agregar/ajax/call') {
+            return array (  '_controller' => 'Heysoft\\MenuBundle\\Controller\\CarritoController::AgregarAction',  '_route' => 'heysoft_menu_agregar_carrito',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

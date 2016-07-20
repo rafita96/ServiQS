@@ -50,4 +50,22 @@ Heysoft\MenuBundle\Entity\Platillo:
                 inverseJoinColumns:
                     bebida_id:
                         referencedColumnName: id
+        platillosentradas:
+            targetEntity: PlatilloEntrada
+            inversedBy: platillos
+            joinTable:
+                name: platillo_platilloentrada
+                joinColumns:
+                    platillo_id:
+                        referencedColumnName: id 
+                inverseJoinColumns:
+                    platilloentrada_id:
+                        referencedColumnName: id
+    manyToOne:
+        categoria:
+            targetEntity: Categoria
+            inversedBy: platillos
+            joinColumn:
+                name: categoria
+                referencedColumnName: id
     lifecycleCallbacks: {  }

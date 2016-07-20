@@ -1,3 +1,11 @@
 heysoft_menu_homepage:
     path:     /index
     defaults: { _controller: HeysoftMenuBundle:Default:index }
+
+heysoft_menu_categorias:
+  prefix: /
+  resource: '@HeysoftMenuBundle/Resources/config/routing/categorias.yml'
+
+heysoft_menu_agregar_carrito:
+  path: /carrito/agregar/ajax/call
+  defaults: { _controller: HeysoftMenuBundle:Carrito:Agregar }

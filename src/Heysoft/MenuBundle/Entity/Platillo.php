@@ -225,4 +225,159 @@ class Platillo
     {
         return $this->cdia;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $platilloschicos;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $bebidas;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $platillosentradas;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->platilloschicos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->bebidas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->platillosentradas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add platilloschico
+     *
+     * @param \Heysoft\MenuBundle\Entity\PlatilloChico $platilloschico
+     *
+     * @return Platillo
+     */
+    public function addPlatilloschico(\Heysoft\MenuBundle\Entity\PlatilloChico $platilloschico)
+    {
+        $this->platilloschicos[] = $platilloschico;
+
+        return $this;
+    }
+
+    /**
+     * Remove platilloschico
+     *
+     * @param \Heysoft\MenuBundle\Entity\PlatilloChico $platilloschico
+     */
+    public function removePlatilloschico(\Heysoft\MenuBundle\Entity\PlatilloChico $platilloschico)
+    {
+        $this->platilloschicos->removeElement($platilloschico);
+    }
+
+    /**
+     * Get platilloschicos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlatilloschicos()
+    {
+        return $this->platilloschicos;
+    }
+
+    /**
+     * Add bebida
+     *
+     * @param \Heysoft\MenuBundle\Entity\Bebida $bebida
+     *
+     * @return Platillo
+     */
+    public function addBebida(\Heysoft\MenuBundle\Entity\Bebida $bebida)
+    {
+        $this->bebidas[] = $bebida;
+
+        return $this;
+    }
+
+    /**
+     * Remove bebida
+     *
+     * @param \Heysoft\MenuBundle\Entity\Bebida $bebida
+     */
+    public function removeBebida(\Heysoft\MenuBundle\Entity\Bebida $bebida)
+    {
+        $this->bebidas->removeElement($bebida);
+    }
+
+    /**
+     * Get bebidas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBebidas()
+    {
+        return $this->bebidas;
+    }
+
+    /**
+     * Add platillosentrada
+     *
+     * @param \Heysoft\MenuBundle\Entity\PlatilloEntrada $platillosentrada
+     *
+     * @return Platillo
+     */
+    public function addPlatillosentrada(\Heysoft\MenuBundle\Entity\PlatilloEntrada $platillosentrada)
+    {
+        $this->platillosentradas[] = $platillosentrada;
+
+        return $this;
+    }
+
+    /**
+     * Remove platillosentrada
+     *
+     * @param \Heysoft\MenuBundle\Entity\PlatilloEntrada $platillosentrada
+     */
+    public function removePlatillosentrada(\Heysoft\MenuBundle\Entity\PlatilloEntrada $platillosentrada)
+    {
+        $this->platillosentradas->removeElement($platillosentrada);
+    }
+
+    /**
+     * Get platillosentradas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlatillosentradas()
+    {
+        return $this->platillosentradas;
+    }
+    /**
+     * @var \Heysoft\MenuBundle\Entity\Categoria
+     */
+    private $categoria;
+
+
+    /**
+     * Set categoria
+     *
+     * @param \Heysoft\MenuBundle\Entity\Categoria $categoria
+     *
+     * @return Platillo
+     */
+    public function setCategoria(\Heysoft\MenuBundle\Entity\Categoria $categoria = null)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return \Heysoft\MenuBundle\Entity\Categoria
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
 }

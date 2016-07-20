@@ -15,4 +15,8 @@ Heysoft\MenuBundle\Entity\PlatilloEntrada:
             unique: true
         precio:
             type: float
+    manyToMany:
+        platillos:
+            targetEntity: Platillo
+            mappedBy: platillosentradas
     lifecycleCallbacks: {  }

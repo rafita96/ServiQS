@@ -10,4 +10,12 @@ namespace Heysoft\MenuBundle\Repository;
  */
 class PlatilloRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findPlatilloPorCategoria($nombre)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM HeysoftMenuBundle:Platillo p, HeysoftMenuBundle:Categoria c WHERE c.categoria = :nombre and c = p.categoria and p.cdia != 1 and p.status != 0 ORDER BY p.platillo ASC'
+            )->setParameter('nombre', $nombre)
+            ->getResult();
+    }
 }
