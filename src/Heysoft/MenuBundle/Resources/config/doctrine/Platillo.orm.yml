@@ -25,8 +25,6 @@ Heysoft\MenuBundle\Entity\Platillo:
             type: string
             length: 255
             nullable: true
-        cdia:
-            type: boolean
     manyToMany:
         platilloschicos:
             targetEntity: PlatilloChico

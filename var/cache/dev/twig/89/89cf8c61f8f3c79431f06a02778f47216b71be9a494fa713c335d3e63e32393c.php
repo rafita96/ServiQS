@@ -22,20 +22,20 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_93dce5ba3874e4ae42f0ef439be6c8db856d88a0772f3d909041ccf82942a4f0 = $this->env->getExtension("native_profiler");
-        $__internal_93dce5ba3874e4ae42f0ef439be6c8db856d88a0772f3d909041ccf82942a4f0->enter($__internal_93dce5ba3874e4ae42f0ef439be6c8db856d88a0772f3d909041ccf82942a4f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "HeysoftMenuBundle:Menu:showplatillos.html.twig"));
+        $__internal_047aa51d3c0c47df3ee5f92cc306fe75a22713211944802f108cc22f9c67db29 = $this->env->getExtension("native_profiler");
+        $__internal_047aa51d3c0c47df3ee5f92cc306fe75a22713211944802f108cc22f9c67db29->enter($__internal_047aa51d3c0c47df3ee5f92cc306fe75a22713211944802f108cc22f9c67db29_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "HeysoftMenuBundle:Menu:showplatillos.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_93dce5ba3874e4ae42f0ef439be6c8db856d88a0772f3d909041ccf82942a4f0->leave($__internal_93dce5ba3874e4ae42f0ef439be6c8db856d88a0772f3d909041ccf82942a4f0_prof);
+        $__internal_047aa51d3c0c47df3ee5f92cc306fe75a22713211944802f108cc22f9c67db29->leave($__internal_047aa51d3c0c47df3ee5f92cc306fe75a22713211944802f108cc22f9c67db29_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_1607f7b206748c372b4c27aeba26aba83bcb7bb553e93531e4b8649511cda009 = $this->env->getExtension("native_profiler");
-        $__internal_1607f7b206748c372b4c27aeba26aba83bcb7bb553e93531e4b8649511cda009->enter($__internal_1607f7b206748c372b4c27aeba26aba83bcb7bb553e93531e4b8649511cda009_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8984072dc350866242c451509a2002e039951b2dbcbc8867a1d9fadfe614e9ff = $this->env->getExtension("native_profiler");
+        $__internal_8984072dc350866242c451509a2002e039951b2dbcbc8867a1d9fadfe614e9ff->enter($__internal_8984072dc350866242c451509a2002e039951b2dbcbc8867a1d9fadfe614e9ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<div class=\"panel panel-default\">
@@ -89,7 +89,10 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-4\">
-\t\t\t\t\t<button role=\"button\" class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#aCar\" onclick=\"aCarrito(platillo)\"> Agregar a Carrito </button>
+\t\t\t\t\t<button role=\"button\" class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#aCar\" onclick=\"aCarrito(";
+            // line 30
+            echo twig_escape_filter($this->env, $this->getAttribute($context["platillo"], "id", array()), "html", null, true);
+            echo ")\"> Agregar a Carrito </button>
 \t\t\t\t\t<!-- <button type=\"button\" class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#aCar\" onclick=\"request()\">Agregar a Carrito</button> -->
 \t\t\t\t</div>
 \t\t\t</div>\t\t\t
@@ -124,15 +127,15 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 
 ";
         
-        $__internal_1607f7b206748c372b4c27aeba26aba83bcb7bb553e93531e4b8649511cda009->leave($__internal_1607f7b206748c372b4c27aeba26aba83bcb7bb553e93531e4b8649511cda009_prof);
+        $__internal_8984072dc350866242c451509a2002e039951b2dbcbc8867a1d9fadfe614e9ff->leave($__internal_8984072dc350866242c451509a2002e039951b2dbcbc8867a1d9fadfe614e9ff_prof);
 
     }
 
     // line 60
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_8b7611c098a3c52c6e81cfee9b6f3ad025cf2ed469790333abe9c809bc523721 = $this->env->getExtension("native_profiler");
-        $__internal_8b7611c098a3c52c6e81cfee9b6f3ad025cf2ed469790333abe9c809bc523721->enter($__internal_8b7611c098a3c52c6e81cfee9b6f3ad025cf2ed469790333abe9c809bc523721_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_4a8c539ca713532fe1d9fdcf389de69bdae524c997d6701e1891202750b1d370 = $this->env->getExtension("native_profiler");
+        $__internal_4a8c539ca713532fe1d9fdcf389de69bdae524c997d6701e1891202750b1d370->enter($__internal_4a8c539ca713532fe1d9fdcf389de69bdae524c997d6701e1891202750b1d370_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 61
         echo "\t";
@@ -144,8 +147,8 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
     \t\t\$.post('";
         // line 65
         echo $this->env->getExtension('routing')->getPath("heysoft_menu_agregar_carrito");
-        echo "',               
-                {platillo: platillo}, 
+        echo "',              
+                {id: platillo}, 
             function(response){
                     if(response.code == 100 && response.success){//dummy check
                       //do something
@@ -155,7 +158,7 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 \t</script>\t
 ";
         
-        $__internal_8b7611c098a3c52c6e81cfee9b6f3ad025cf2ed469790333abe9c809bc523721->leave($__internal_8b7611c098a3c52c6e81cfee9b6f3ad025cf2ed469790333abe9c809bc523721_prof);
+        $__internal_4a8c539ca713532fe1d9fdcf389de69bdae524c997d6701e1891202750b1d370->leave($__internal_4a8c539ca713532fe1d9fdcf389de69bdae524c997d6701e1891202750b1d370_prof);
 
     }
 
@@ -171,7 +174,7 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 
     public function getDebugInfo()
     {
-        return array (  146 => 65,  138 => 61,  132 => 60,  104 => 37,  86 => 25,  77 => 19,  72 => 17,  64 => 14,  57 => 10,  54 => 9,  50 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  149 => 65,  141 => 61,  135 => 60,  107 => 37,  94 => 30,  86 => 25,  77 => 19,  72 => 17,  64 => 14,  57 => 10,  54 => 9,  50 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -203,7 +206,7 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 /* */
 /* 			<div class="row">*/
 /* 				<div class="col-md-4">*/
-/* 					<button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito(platillo)"> Agregar a Carrito </button>*/
+/* 					<button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito({{ platillo.id }})"> Agregar a Carrito </button>*/
 /* 					<!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="request()">Agregar a Carrito</button> -->*/
 /* 				</div>*/
 /* 			</div>			*/
@@ -238,8 +241,8 @@ class __TwigTemplate_74e580824ea1452bd21bffc9599034d8740a1a9be4531ebebefa9798865
 /* */
 /* 	<script>*/
 /* 		function aCarrito(platillo){*/
-/*     		$.post('{{path('heysoft_menu_agregar_carrito')}}',               */
-/*                 {platillo: platillo}, */
+/*     		$.post('{{path('heysoft_menu_agregar_carrito')}}',              */
+/*                 {id: platillo}, */
 /*             function(response){*/
 /*                     if(response.code == 100 && response.success){//dummy check*/
 /*                       //do something*/

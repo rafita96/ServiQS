@@ -10,4 +10,12 @@ namespace Heysoft\MenuBundle\Repository;
  */
 class CategoriaRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findSinComidaDelDia()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT c FROM HeysoftMenuBundle:Categoria c WHERE c.categoria != :cdia ORDER BY c.categoria ASC'
+            )->setParameter('cdia', 'cDia')
+            ->getResult();
+    }
 }

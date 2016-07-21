@@ -10,7 +10,7 @@ class CategoriaController extends Controller
 	public function CategoriasExistentesAction()
     {	
     	$repository = $this->getDoctrine()->getRepository('HeysoftMenuBundle:Categoria');
-        $categorias = $repository->findAll();
+        $categorias = $repository->findSinComidaDelDia();
 
         return $this->render(
             'menu/categorias_list.html.twig',

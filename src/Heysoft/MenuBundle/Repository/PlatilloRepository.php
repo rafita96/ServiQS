@@ -14,8 +14,17 @@ class PlatilloRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT p FROM HeysoftMenuBundle:Platillo p, HeysoftMenuBundle:Categoria c WHERE c.categoria = :nombre and c = p.categoria and p.cdia != 1 and p.status != 0 ORDER BY p.platillo ASC'
+                'SELECT p FROM HeysoftMenuBundle:Platillo p, HeysoftMenuBundle:Categoria c WHERE c.categoria = :nombre and c = p.categoria and p.status != 0 ORDER BY p.platillo ASC'
             )->setParameter('nombre', $nombre)
             ->getResult();
+    }
+
+    public function findComidasDelDia()
+    {
+    	return $this->getEntityManager()
+    		->createQuery(
+    			'SELECT p FROM HeysoftMenuBundle:Platillo p, HeysoftMenuBundle:Categoria c WHERE c.categoria = :cdia and p.categoria = c.id ORDER BY p.platillo ASC'
+    			)->setParameter('cdia', 'cDia')
+    		->getResult();
     }
 }

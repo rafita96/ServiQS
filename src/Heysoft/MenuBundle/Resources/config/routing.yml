@@ -7,5 +7,5 @@ heysoft_menu_categorias:
   resource: '@HeysoftMenuBundle/Resources/config/routing/categorias.yml'
 
 heysoft_menu_agregar_carrito:
-  path: /carrito/agregar/ajax/call
+  path: /carrito/agregar/ajax/call/
   defaults: { _controller: HeysoftMenuBundle:Carrito:Agregar }

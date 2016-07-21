@@ -43,12 +43,6 @@ class Platillo
     private $imagen;
 
     /**
-     * @var bool
-     */
-    private $cdia;
-
-
-    /**
      * Get id
      *
      * @return int
@@ -202,29 +196,6 @@ class Platillo
         return $this->imagen;
     }
 
-    /**
-     * Set cdia
-     *
-     * @param boolean $cdia
-     *
-     * @return Platillo
-     */
-    public function setCdia($cdia)
-    {
-        $this->cdia = $cdia;
-
-        return $this;
-    }
-
-    /**
-     * Get cdia
-     *
-     * @return bool
-     */
-    public function getCdia()
-    {
-        return $this->cdia;
-    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */

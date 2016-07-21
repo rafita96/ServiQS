@@ -15,7 +15,31 @@ class DefaultController extends Controller
     {
     	$repository = $this->getDoctrine()->getRepository("HeysoftMenuBundle:Platillo");
 
-    	$platillos = $repository->findPlatilloPorCategoria($nombre);
-    	return $this->render('HeysoftMenuBundle:Menu:showplatillos.html.twig', array('platillos' => $platillos, 'categoria' => $nombre));
+    	if($nombre == 'Comida_Del_Dia')
+        {
+            $platillos = $repository->findComidasDelDia();
+            $nombre = 'Comida Del Dia';
+        }
+        else
+        {
+            $platillos = $repository->findPlatilloPorCategoria($nombre);
+        }
+        
+        if (!$platillos) 
+        {
+            throw $this->createNotFoundException('La ruta no existe, compa.');
+        }
+
+        return $this->render('HeysoftMenuBundle:Menu:showplatillos.html.twig', array('platillos' => $platillos, 'categoria' => $nombre));
+    	
+    }
+
+    public function comidaDelDiaAction()
+    {
+        $repository = $this->getDoctrine()->getRepository("HeysoftMenuBundle:Platillo");
+
+        
+
+        return $this->render('HeysoftMenuBundle:Menu:showplatillos.html.twig', array('platillos' => $platillos, 'categoria' => 'Comida del dia'));
     }
 }

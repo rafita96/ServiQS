@@ -111,7 +111,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // heysoft_menu_agregar_carrito
-        if ($pathinfo === '/carrito/agregar/ajax/call') {
+        if (rtrim($pathinfo, '/') === '/carrito/agregar/ajax/call') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'heysoft_menu_agregar_carrito');
+            }
+
             return array (  '_controller' => 'Heysoft\\MenuBundle\\Controller\\CarritoController::AgregarAction',  '_route' => 'heysoft_menu_agregar_carrito',);
         }
 

@@ -27,7 +27,7 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito(platillo)"> Agregar a Carrito </button>
+					<button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito({{ platillo.id }})"> Agregar a Carrito </button>
 					<!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="request()">Agregar a Carrito</button> -->
 				</div>
 			</div>			
@@ -62,8 +62,8 @@
 
 	<script>
 		function aCarrito(platillo){
-    		$.post('{{path('heysoft_menu_agregar_carrito')}}',               
-                {platillo: platillo}, 
+    		$.post('{{path('heysoft_menu_agregar_carrito')}}',              
+                {id: platillo}, 
             function(response){
                     if(response.code == 100 && response.success){//dummy check
                       //do something
