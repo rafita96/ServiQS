@@ -38,8 +38,6 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository("HeysoftMenuBundle:Platillo");
 
-        
-
         return $this->render('HeysoftMenuBundle:Menu:showplatillos.html.twig', array('platillos' => $platillos, 'categoria' => 'Comida del dia'));
     }
 }

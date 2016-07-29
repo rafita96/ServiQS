@@ -1,9 +1,12 @@
 heysoft_menu_homepage:
-    path:     /index
-    defaults: { _controller: HeysoftMenuBundle:Default:index }
+  path: /
+  defaults:
+      _controller: FrameworkBundle:Redirect:urlRedirect
+      path: /categoria/Comida_Del_Dia
+      permanent: true
 
 heysoft_menu_categorias:
-  prefix: /
+  prefix: /categoria
   resource: '@HeysoftMenuBundle/Resources/config/routing/categorias.yml'
 
 heysoft_menu_agregar_carrito:
