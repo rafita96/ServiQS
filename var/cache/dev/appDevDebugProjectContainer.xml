@@ -35,14 +35,14 @@
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">cfd913c6b6b9260eaa359193ae606e2b3173242f</parameter>
-    <parameter key="locale">en</parameter>
+    <parameter key="locale">es</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">cfd913c6b6b9260eaa359193ae606e2b3173242f</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.trusted_proxies" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">es</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cookie_httponly">true</parameter>
@@ -98,6 +98,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>form/fields.html.twig</parameter>
     </parameter>
     <parameter key="monolog.logger.class">Symfony\Bridge\Monolog\Logger</parameter>
     <parameter key="monolog.gelf.publisher.class">Gelf\MessagePublisher</parameter>
@@ -441,7 +442,7 @@
     <service id="locale_listener" class="Symfony\Component\HttpKernel\EventListener\LocaleListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>es</argument>
       <argument type="service" id="router" on-invalid="ignore"/>
     </service>
     <service id="translator_listener" class="Symfony\Component\HttpKernel\EventListener\TranslatorListener">
@@ -542,7 +543,7 @@
                   <tag name="cache.pool"/>
                   <argument>qvRL-oJIzy</argument>
                   <argument></argument>
-                  <argument>A2NHhope7AJ0z9p9xiN9pQ</argument>
+                  <argument>+Dw3P9Q7nzg6RBcvHTTFkA</argument>
                   <argument>C:\xampp\htdocs\ServiQS\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -555,7 +556,7 @@
                   <tag name="cache.pool"/>
                   <argument>604K2dD-b0</argument>
                   <argument></argument>
-                  <argument>A2NHhope7AJ0z9p9xiN9pQ</argument>
+                  <argument>+Dw3P9Q7nzg6RBcvHTTFkA</argument>
                   <argument>C:\xampp\htdocs\ServiQS\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1014,7 +1015,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>en</argument>
+          <argument>es</argument>
         </argument>
       </call>
       <autowiring-type>Symfony\Component\Translation\TranslatorInterface</autowiring-type>
@@ -1204,7 +1205,7 @@
       <tag name="cache.pool"/>
       <argument>KG5sJN8w4b</argument>
       <argument></argument>
-      <argument>A2NHhope7AJ0z9p9xiN9pQ</argument>
+      <argument>+Dw3P9Q7nzg6RBcvHTTFkA</argument>
       <argument>C:\xampp\htdocs\ServiQS\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1987,7 +1988,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>579a779a108018.99809792</argument>
+            <argument>579cd8675f8501.26407568</argument>
           </service>
         </argument>
       </argument>
@@ -2281,7 +2282,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>579a779a108018.99809792</argument>
+            <argument>579cd8675f8501.26407568</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2379,10 +2380,11 @@
       <argument type="collection">
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
-        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
+          <argument>form/fields.html.twig</argument>
         </argument>
+        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="autoescape">filename</argument>
         <argument key="cache">C:\xampp\htdocs\ServiQS\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
@@ -2507,6 +2509,7 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>form/fields.html.twig</argument>
                     </argument>
                   </service>
                 </argument>

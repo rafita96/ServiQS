@@ -15,32 +15,56 @@ class __TwigTemplate_93d615567581979f45fee1289344cd8573fc1e78f92bc69bb388a2f6f3b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ed976653a94796be651083da979ccefa3f475b7a21ae49d3a9f1b21fb4824871 = $this->env->getExtension("native_profiler");
-        $__internal_ed976653a94796be651083da979ccefa3f475b7a21ae49d3a9f1b21fb4824871->enter($__internal_ed976653a94796be651083da979ccefa3f475b7a21ae49d3a9f1b21fb4824871_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
+        $__internal_281bb405179508e8dd6ad85f583fe581781b3408bc542cdffbe6c8b7faf57ca1 = $this->env->getExtension("native_profiler");
+        $__internal_281bb405179508e8dd6ad85f583fe581781b3408bc542cdffbe6c8b7faf57ca1->enter($__internal_281bb405179508e8dd6ad85f583fe581781b3408bc542cdffbe6c8b7faf57ca1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
 
         // line 2
-        echo "
-";
-        // line 3
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("method" => "post", "action" => $this->env->getExtension('routing')->getPath("fos_user_registration_register"), "attr" => array("class" => "fos_user_registration_register")));
-        echo "
-    ";
-        // line 4
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
-        echo "
-    <div>
-        <input type=\"submit\" value=\"";
+        echo "<div class=\"container\">
+\t<div class=\"panel panel-default col-md-offset-3 col-md-6\">
+\t\t<div class=\"panel-heading\"><h3 style=\"text-align:center\">Registrarse</h3></div>
+\t\t<div class=\"panel-body\">
+\t\t\t";
         // line 6
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("method" => "post", "action" => $this->env->getExtension('routing')->getPath("fos_user_registration_register"), "attr" => array("class" => "form-horizontal")));
+        echo "
+\t\t\t    ";
+        // line 7
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'row', array("attr" => array("placeholder" => "ejemplo@uabc.edu.mx")));
+        echo "
+\t\t\t    ";
+        // line 8
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'row');
+        echo "
+\t\t\t    ";
+        // line 9
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'row');
+        echo "
+\t\t\t    ";
+        // line 10
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'row');
+        echo "
+\t\t\t    <div class=\"col-md-offset-4 col-md-8\">
+\t\t\t        <input class=\"btn btn-success\" type=\"submit\" value=\"";
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
-    </div>
-";
-        // line 8
+\t\t\t        <div class=\"pull-right\">
+\t\t\t        \t<a class=\"btn btn-default\" href=\"";
+        // line 14
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+        echo "\">Regresar</a>
+\t\t\t        </div>
+\t\t\t    </div>
+\t\t\t";
+        // line 17
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
+\t\t</div>
+\t</div>
+</div>
 ";
         
-        $__internal_ed976653a94796be651083da979ccefa3f475b7a21ae49d3a9f1b21fb4824871->leave($__internal_ed976653a94796be651083da979ccefa3f475b7a21ae49d3a9f1b21fb4824871_prof);
+        $__internal_281bb405179508e8dd6ad85f583fe581781b3408bc542cdffbe6c8b7faf57ca1->leave($__internal_281bb405179508e8dd6ad85f583fe581781b3408bc542cdffbe6c8b7faf57ca1_prof);
 
     }
 
@@ -56,15 +80,27 @@ class __TwigTemplate_93d615567581979f45fee1289344cd8573fc1e78f92bc69bb388a2f6f3b
 
     public function getDebugInfo()
     {
-        return array (  39 => 8,  34 => 6,  29 => 4,  25 => 3,  22 => 2,);
+        return array (  60 => 17,  54 => 14,  49 => 12,  44 => 10,  40 => 9,  36 => 8,  32 => 7,  28 => 6,  22 => 2,);
     }
 }
 /* {% trans_default_domain 'FOSUserBundle' %}*/
-/* */
-/* {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}*/
-/*     {{ form_widget(form) }}*/
-/*     <div>*/
-/*         <input type="submit" value="{{ 'registration.submit'|trans }}" />*/
-/*     </div>*/
-/* {{ form_end(form) }}*/
+/* <div class="container">*/
+/* 	<div class="panel panel-default col-md-offset-3 col-md-6">*/
+/* 		<div class="panel-heading"><h3 style="text-align:center">Registrarse</h3></div>*/
+/* 		<div class="panel-body">*/
+/* 			{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'form-horizontal'}}) }}*/
+/* 			    {{ form_row(form.email, {'attr': {'placeholder': 'ejemplo@uabc.edu.mx'} }) }}*/
+/* 			    {{ form_row(form.username) }}*/
+/* 			    {{ form_row(form.plainPassword.first) }}*/
+/* 			    {{ form_row(form.plainPassword.second) }}*/
+/* 			    <div class="col-md-offset-4 col-md-8">*/
+/* 			        <input class="btn btn-success" type="submit" value="{{ 'registration.submit'|trans }}" />*/
+/* 			        <div class="pull-right">*/
+/* 			        	<a class="btn btn-default" href="{{ path('fos_user_security_login') }}">Regresar</a>*/
+/* 			        </div>*/
+/* 			    </div>*/
+/* 			{{ form_end(form) }}*/
+/* 		</div>*/
+/* 	</div>*/
+/* </div>*/
 /* */
