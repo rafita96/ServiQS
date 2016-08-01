@@ -18,8 +18,8 @@ class __TwigTemplate_adc001601a0c943ffa48983422bd61095457257d5fa60239546e0fa051a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ef491b641aca82b4aa765113f40046c3b5a2c6f05525211f0fa639a399052a4d = $this->env->getExtension("native_profiler");
-        $__internal_ef491b641aca82b4aa765113f40046c3b5a2c6f05525211f0fa639a399052a4d->enter($__internal_ef491b641aca82b4aa765113f40046c3b5a2c6f05525211f0fa639a399052a4d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle::layout.html.twig"));
+        $__internal_ba6bed9078e1a985737c15fc7425c4e1acbb852dab78290f84a46787c88ed80b = $this->env->getExtension("native_profiler");
+        $__internal_ba6bed9078e1a985737c15fc7425c4e1acbb852dab78290f84a46787c88ed80b->enter($__internal_ba6bed9078e1a985737c15fc7425c4e1acbb852dab78290f84a46787c88ed80b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle::layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -59,90 +59,81 @@ class __TwigTemplate_adc001601a0c943ffa48983422bd61095457257d5fa60239546e0fa051a
         <div class=\"brand\">ServiQ</div>
         <div class=\"address-bar\">UABC SAUZAL</div>
         
-        <div>
+    ";
+        // line 47
+        echo "        <div class=\"container\">
+            <div class=\"alert col-md-offset-3 col-md-6\">
             ";
-        // line 38
-        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 39
-            echo "                ";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logged_in_as", array("%username%" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
-            echo " |
-                ";
-            // line 45
-            echo "            ";
-        }
-        // line 46
-        echo "        </div>
-
-        ";
-        // line 48
+        // line 49
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 49
-            echo "            ";
+            // line 50
+            echo "                ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 50
-                echo "                ";
+                // line 51
+                echo "                    ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 51
-                    echo "                    <div class=\"flash-";
+                    // line 52
+                    echo "                        <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
-                        ";
-                    // line 52
+                            ";
+                    // line 53
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo "
-                    </div>
-                ";
+                        </div>
+                    ";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 55
-                echo "            ";
+                // line 56
+                echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 56
-            echo "        ";
+            // line 57
+            echo "            ";
         }
-        // line 57
-        echo "
-        <div>
+        // line 58
+        echo "            </div>
+        </div>
+
+        <div class=\"container\">
             ";
-        // line 59
+        // line 62
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 61
+        // line 64
         echo "        </div>
     </body>
 </html>
 ";
         
-        $__internal_ef491b641aca82b4aa765113f40046c3b5a2c6f05525211f0fa639a399052a4d->leave($__internal_ef491b641aca82b4aa765113f40046c3b5a2c6f05525211f0fa639a399052a4d_prof);
+        $__internal_ba6bed9078e1a985737c15fc7425c4e1acbb852dab78290f84a46787c88ed80b->leave($__internal_ba6bed9078e1a985737c15fc7425c4e1acbb852dab78290f84a46787c88ed80b_prof);
 
     }
 
     // line 14
     public function block_title($context, array $blocks = array())
     {
-        $__internal_04750e4b6c4984675ad08b676b27a36fb142d1b096caab9ade46206f82cc5e7f = $this->env->getExtension("native_profiler");
-        $__internal_04750e4b6c4984675ad08b676b27a36fb142d1b096caab9ade46206f82cc5e7f->enter($__internal_04750e4b6c4984675ad08b676b27a36fb142d1b096caab9ade46206f82cc5e7f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_ad563ef0e51658bbe3762fe36be671c9ae3221f339655161e94b7f81377010f2 = $this->env->getExtension("native_profiler");
+        $__internal_ad563ef0e51658bbe3762fe36be671c9ae3221f339655161e94b7f81377010f2->enter($__internal_ad563ef0e51658bbe3762fe36be671c9ae3221f339655161e94b7f81377010f2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "ServiQ";
         
-        $__internal_04750e4b6c4984675ad08b676b27a36fb142d1b096caab9ade46206f82cc5e7f->leave($__internal_04750e4b6c4984675ad08b676b27a36fb142d1b096caab9ade46206f82cc5e7f_prof);
+        $__internal_ad563ef0e51658bbe3762fe36be671c9ae3221f339655161e94b7f81377010f2->leave($__internal_ad563ef0e51658bbe3762fe36be671c9ae3221f339655161e94b7f81377010f2_prof);
 
     }
 
     // line 17
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_4752c386131e7310100bf3b2a3902efce5839b22d9cc0f040e0ffb8396c5a623 = $this->env->getExtension("native_profiler");
-        $__internal_4752c386131e7310100bf3b2a3902efce5839b22d9cc0f040e0ffb8396c5a623->enter($__internal_4752c386131e7310100bf3b2a3902efce5839b22d9cc0f040e0ffb8396c5a623_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_fc4a4f23519737c731bbd63a6cd4259e0eba46600374f32b02c8513a4535d8e4 = $this->env->getExtension("native_profiler");
+        $__internal_fc4a4f23519737c731bbd63a6cd4259e0eba46600374f32b02c8513a4535d8e4->enter($__internal_fc4a4f23519737c731bbd63a6cd4259e0eba46600374f32b02c8513a4535d8e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 18
         echo "        <link href=\"";
@@ -156,20 +147,20 @@ class __TwigTemplate_adc001601a0c943ffa48983422bd61095457257d5fa60239546e0fa051a
         echo "\" rel=\"stylesheet\">
         ";
         
-        $__internal_4752c386131e7310100bf3b2a3902efce5839b22d9cc0f040e0ffb8396c5a623->leave($__internal_4752c386131e7310100bf3b2a3902efce5839b22d9cc0f040e0ffb8396c5a623_prof);
+        $__internal_fc4a4f23519737c731bbd63a6cd4259e0eba46600374f32b02c8513a4535d8e4->leave($__internal_fc4a4f23519737c731bbd63a6cd4259e0eba46600374f32b02c8513a4535d8e4_prof);
 
     }
 
-    // line 59
+    // line 62
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_0d42d2cb492561bae6fefe49b3bf7e96c469f7ca1f7c97fc71857409416e5358 = $this->env->getExtension("native_profiler");
-        $__internal_0d42d2cb492561bae6fefe49b3bf7e96c469f7ca1f7c97fc71857409416e5358->enter($__internal_0d42d2cb492561bae6fefe49b3bf7e96c469f7ca1f7c97fc71857409416e5358_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_9056ecd9dc8a0da8a1fdfe434170c0591392cbaa5121c9e587e4caebb2584927 = $this->env->getExtension("native_profiler");
+        $__internal_9056ecd9dc8a0da8a1fdfe434170c0591392cbaa5121c9e587e4caebb2584927->enter($__internal_9056ecd9dc8a0da8a1fdfe434170c0591392cbaa5121c9e587e4caebb2584927_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
-        // line 60
+        // line 63
         echo "            ";
         
-        $__internal_0d42d2cb492561bae6fefe49b3bf7e96c469f7ca1f7c97fc71857409416e5358->leave($__internal_0d42d2cb492561bae6fefe49b3bf7e96c469f7ca1f7c97fc71857409416e5358_prof);
+        $__internal_9056ecd9dc8a0da8a1fdfe434170c0591392cbaa5121c9e587e4caebb2584927->leave($__internal_9056ecd9dc8a0da8a1fdfe434170c0591392cbaa5121c9e587e4caebb2584927_prof);
 
     }
 
@@ -185,7 +176,7 @@ class __TwigTemplate_adc001601a0c943ffa48983422bd61095457257d5fa60239546e0fa051a
 
     public function getDebugInfo()
     {
-        return array (  170 => 60,  164 => 59,  155 => 21,  148 => 18,  142 => 17,  130 => 14,  120 => 61,  118 => 59,  114 => 57,  111 => 56,  105 => 55,  96 => 52,  91 => 51,  86 => 50,  81 => 49,  79 => 48,  75 => 46,  72 => 45,  67 => 39,  65 => 38,  48 => 23,  46 => 17,  40 => 14,  25 => 1,);
+        return array (  161 => 63,  155 => 62,  146 => 21,  139 => 18,  133 => 17,  121 => 14,  111 => 64,  109 => 62,  103 => 58,  100 => 57,  94 => 56,  85 => 53,  80 => 52,  75 => 51,  70 => 50,  68 => 49,  64 => 47,  48 => 23,  46 => 17,  40 => 14,  25 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -224,28 +215,31 @@ class __TwigTemplate_adc001601a0c943ffa48983422bd61095457257d5fa60239546e0fa051a
 /*         <div class="brand">ServiQ</div>*/
 /*         <div class="address-bar">UABC SAUZAL</div>*/
 /*         */
-/*         <div>*/
+/*     {#    <div>*/
 /*             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
 /*                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |*/
 /*                 {# <a href="{{ path('fos_user_security_logout') }}">*/
 /*                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}*/
 /*                 </a>*/
 /*             {% else %}*/
-/*                 <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> #}*/
+/*                 <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> */
 /*             {% endif %}*/
+/*         </div>#}*/
+/*         <div class="container">*/
+/*             <div class="alert col-md-offset-3 col-md-6">*/
+/*             {% if app.request.hasPreviousSession %}*/
+/*                 {% for type, messages in app.session.flashbag.all() %}*/
+/*                     {% for message in messages %}*/
+/*                         <div class="flash-{{ type }}">*/
+/*                             {{ message }}*/
+/*                         </div>*/
+/*                     {% endfor %}*/
+/*                 {% endfor %}*/
+/*             {% endif %}*/
+/*             </div>*/
 /*         </div>*/
 /* */
-/*         {% if app.request.hasPreviousSession %}*/
-/*             {% for type, messages in app.session.flashbag.all() %}*/
-/*                 {% for message in messages %}*/
-/*                     <div class="flash-{{ type }}">*/
-/*                         {{ message }}*/
-/*                     </div>*/
-/*                 {% endfor %}*/
-/*             {% endfor %}*/
-/*         {% endif %}*/
-/* */
-/*         <div>*/
+/*         <div class="container">*/
 /*             {% block fos_user_content %}*/
 /*             {% endblock fos_user_content %}*/
 /*         </div>*/

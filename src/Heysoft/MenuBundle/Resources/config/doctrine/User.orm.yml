@@ -7,3 +7,12 @@ Heysoft\MenuBundle\Entity\User:
             type: integer
             generator:
                 strategy: AUTO
+    oneToOne:
+        carrito:
+            targetEntity: Carrito
+            inversedBy: user
+            joinColumn:
+                name: carrito_id
+                referencedColumnName: id
+
+

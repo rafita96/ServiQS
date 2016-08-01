@@ -26,6 +26,9 @@ Heysoft\MenuBundle\Entity\Platillo:
             length: 255
             nullable: true
     manyToMany:
+        carritos:
+            targetEntity: Carrito 
+            mappedBy: platillos 
         platilloschicos:
             targetEntity: PlatilloChico
             inversedBy: platillos

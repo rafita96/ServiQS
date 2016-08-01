@@ -21,6 +21,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
+use Heysoft\MenuBundle\Entity\Carrito;
 
 /**
  * Controller managing the registration
@@ -42,6 +43,9 @@ class RegistrationController extends Controller
         $user = $userManager->createUser();
         $user->setEnabled(true);
 
+        $carrito = new Carrito();
+        $user->setCarrito($carrito);
+
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
 
@@ -55,6 +59,11 @@ class RegistrationController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($carrito);
+            $em->flush($carrito);
+
             $event = new FormEvent($form, $request);
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 

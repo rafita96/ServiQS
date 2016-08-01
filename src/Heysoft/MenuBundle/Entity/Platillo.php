@@ -351,4 +351,43 @@ class Platillo
     {
         return $this->categoria;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $carritos;
+
+
+    /**
+     * Add carrito
+     *
+     * @param \Heysoft\MenuBundle\Entity\Carrito $carrito
+     *
+     * @return Platillo
+     */
+    public function addCarrito(\Heysoft\MenuBundle\Entity\Carrito $carrito)
+    {
+        $this->carritos[] = $carrito;
+
+        return $this;
+    }
+
+    /**
+     * Remove carrito
+     *
+     * @param \Heysoft\MenuBundle\Entity\Carrito $carrito
+     */
+    public function removeCarrito(\Heysoft\MenuBundle\Entity\Carrito $carrito)
+    {
+        $this->carritos->removeElement($carrito);
+    }
+
+    /**
+     * Get carritos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCarritos()
+    {
+        return $this->carritos;
+    }
 }
