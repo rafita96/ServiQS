@@ -1,0 +1,29 @@
+Heysoft\MenuBundle\Entity\DescripcionPedido:
+    type: entity
+    table: null
+    repositoryClass: Heysoft\MenuBundle\Repository\DescripcionPedidoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        descripcion:
+            type: text
+    manyToMany:
+        carritos:
+            targetEntity: Carrito 
+            mappedBy: descripciones
+        platillos:
+            targetEntity: Platillo
+            inversedBy: descripciones
+            joinTable:
+                name: descipciones_pedidos_platillos
+                joinColumns:
+                    carrito_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    platillos_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }

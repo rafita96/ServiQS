@@ -354,40 +354,40 @@ class Platillo
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $carritos;
+    private $descripciones;
 
 
     /**
-     * Add carrito
+     * Add descripcione
      *
-     * @param \Heysoft\MenuBundle\Entity\Carrito $carrito
+     * @param \Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione
      *
      * @return Platillo
      */
-    public function addCarrito(\Heysoft\MenuBundle\Entity\Carrito $carrito)
+    public function addDescripcione(\Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione)
     {
-        $this->carritos[] = $carrito;
+        $this->descripciones[] = $descripcione;
 
         return $this;
     }
 
     /**
-     * Remove carrito
+     * Remove descripcione
      *
-     * @param \Heysoft\MenuBundle\Entity\Carrito $carrito
+     * @param \Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione
      */
-    public function removeCarrito(\Heysoft\MenuBundle\Entity\Carrito $carrito)
+    public function removeDescripcione(\Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione)
     {
-        $this->carritos->removeElement($carrito);
+        $this->descripciones->removeElement($descripcione);
     }
 
     /**
-     * Get carritos
+     * Get descripciones
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCarritos()
+    public function getDescripciones()
     {
-        return $this->carritos;
+        return $this->descripciones;
     }
 }

@@ -22,53 +22,7 @@ class Carrito
     {
         return $this->id;
     }
-    
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $platillos;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->platillos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add platillo
-     *
-     * @param \Heysoft\MenuBundle\Entity\Platillo $platillo
-     *
-     * @return Carrito
-     */
-    public function addPlatillo(\Heysoft\MenuBundle\Entity\Platillo $platillo)
-    {
-        $this->platillos[] = $platillo;
-
-        return $this;
-    }
-
-    /**
-     * Remove platillo
-     *
-     * @param \Heysoft\MenuBundle\Entity\Platillo $platillo
-     */
-    public function removePlatillo(\Heysoft\MenuBundle\Entity\Platillo $platillo)
-    {
-        $this->platillos->removeElement($platillo);
-    }
-
-    /**
-     * Get platillos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPlatillos()
-    {
-        return $this->platillos;
-    }
     /**
      * @var \Heysoft\MenuBundle\Entity\User
      */
@@ -97,5 +51,57 @@ class Carrito
     public function getUser()
     {
         return $this->user;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $descripciones;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $platillos;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->descripciones = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->platillos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add descripcione
+     *
+     * @param \Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione
+     *
+     * @return Carrito
+     */
+    public function addDescripcione(\Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione)
+    {
+        $this->descripciones[] = $descripcione;
+
+        return $this;
+    }
+
+    /**
+     * Remove descripcione
+     *
+     * @param \Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione
+     */
+    public function removeDescripcione(\Heysoft\MenuBundle\Entity\DescripcionPedido $descripcione)
+    {
+        $this->descripciones->removeElement($descripcione);
+    }
+
+    /**
+     * Get descripciones
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDescripciones()
+    {
+        return $this->descripciones;
     }
 }

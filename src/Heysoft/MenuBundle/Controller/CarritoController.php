@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Heysoft\MenuBundle\Entity\DescripcionPedido;
 
 class CarritoController extends Controller
 {
@@ -13,13 +14,21 @@ class CarritoController extends Controller
     	$data = $request->request->get('id',null);
 
     	$repository = $this->getDoctrine()->getRepository('HeysoftMenuBundle:Platillo');
+        // $em = $this->getDoctrine()->getManager();
 
-    	$platillo = $repository->findOneById($data);
-        $platillo->setIngredientes('Has accionado un llamado AJAX');
+  //       $carrito = $user->getCarrito();
 
-		$em = $this->getDoctrine()->getManager();
-		$em->persist($platillo);
-		$em->flush($platillo);
+  //       $platillo = $repository->findOneById($data);
+
+  //       $descripcion = new DescripcionPedido();
+  //       $descripcion->addPlatillo($platillo);
+  //       $em->persist($descripcion);
+  //       $em->flush($descripcion);
+        
+  //       $carrito->addDescripciones($descripcion);
+
+		// $em->persist($carrito);
+  //       $em->flush($carrito)
 
     	$response = array("code" => 100, "success" => true);
 

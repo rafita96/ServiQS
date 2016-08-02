@@ -13,15 +13,15 @@ Heysoft\MenuBundle\Entity\Carrito:
             targetEntity: User
             mappedBy: carrito 
     manyToMany:
-        platillos:
-            targetEntity: Platillo
+        descripciones:
+            targetEntity: DescripcionPedido
             inversedBy: carritos
             joinTable:
-                name: carritos_platillos
+                name: carritos_descripciones_pedidos
                 joinColumns:
                     carrito_id:
                         referencedColumnName: id
                 inverseJoinColumns:
-                    platillos_id:
+                    descripcion_pedido_id:
                         referencedColumnName: id
     lifecycleCallbacks: {  }
