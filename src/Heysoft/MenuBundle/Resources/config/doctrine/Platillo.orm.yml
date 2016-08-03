@@ -26,9 +26,6 @@ Heysoft\MenuBundle\Entity\Platillo:
             length: 255
             nullable: true
     manyToMany:
-        descripciones:
-            targetEntity: DescripcionPedido 
-            mappedBy: platillos 
         platilloschicos:
             targetEntity: PlatilloChico
             inversedBy: platillos
@@ -69,4 +66,8 @@ Heysoft\MenuBundle\Entity\Platillo:
             joinColumn:
                 name: categoria
                 referencedColumnName: id
+    oneToMany:
+        descripciones:
+            targetEntity: DescripcionPedido
+            mappedBy: platillo 
     lifecycleCallbacks: {  }

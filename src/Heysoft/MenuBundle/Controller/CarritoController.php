@@ -3,35 +3,57 @@
 namespace Heysoft\MenuBundle\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Heysoft\MenuBundle\Entity\DescripcionPedido;
 
 class CarritoController extends Controller
 {
+  public function verAction(Request $request)
+  {
+    $user = $this->getUser();
+    $carrito = $user->getCarrito();
+
+    $platillos = array();
+    $descripciones = $carrito->getDescripciones()->toArray();
+
+    foreach($descripciones as $descripcion)
+    {
+      if(!in_array($descripcion->getPlatillo(),$platillos))
+      {
+        array_push($platillos,$descripcion->getPlatillo());
+      }
+    }
+
+    return $this->render('HeysoftMenuBundle:Carrito:vercarrito.html.twig', array('carrito' => $carrito, 'platillos' => $platillos));
+  }
+
 	public function AgregarAction(Request $request)
     {	
     	$data = $request->request->get('id',null);
 
     	$repository = $this->getDoctrine()->getRepository('HeysoftMenuBundle:Platillo');
-        // $em = $this->getDoctrine()->getManager();
 
-  //       $carrito = $user->getCarrito();
+      $user = $this->getUser();
+      $em = $this->getDoctrine()->getManager();
 
-  //       $platillo = $repository->findOneById($data);
+      $carrito = $user->getCarrito();
 
-  //       $descripcion = new DescripcionPedido();
-  //       $descripcion->addPlatillo($platillo);
-  //       $em->persist($descripcion);
-  //       $em->flush($descripcion);
-        
-  //       $carrito->addDescripciones($descripcion);
+      $platillo = $repository->findOneById($data);
 
-		// $em->persist($carrito);
-  //       $em->flush($carrito)
+      $descripcion = new DescripcionPedido();
+      $descripcion->setPlatillo($platillo);
+      $carrito->addDescripcione($descripcion);
+
+      $em->persist($descripcion);
+      $em->flush($descripcion);
+
+		  $em->persist($carrito);
+      $em->flush($carrito);
 
     	$response = array("code" => 100, "success" => true);
 
-        return new JsonResponse($response);
+      return new JsonResponse($response);
     }
 }

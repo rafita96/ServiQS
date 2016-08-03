@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-default">
+	<div class="panel-heading"><h1 style="text-align:center">Carrito</h1></div>
+</div>
+
+{% for platillo in platillos %}
+	<div class="panel panel-default">
+		<div class="panel-heading"><h2>{{ platillo.platillo }}</h2></div>
+		
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-2"><img src="{{ asset('bundles/img/menu/' ~ platillo.imagen) }}" alt="{{ platillo.imagen }}" width="75px" /></div>
+				<h4>
+				<div class="col-md-1">Precio</div>
+				<div class="col-md-2">${{ platillo.precio }}</div>
+				
+				<div class="col-md-2">Cantidad</div>
+				<div class="col-md-2">
+					<button class="btn btn-success">-</button> 5 <button class="btn btn-success">+</button>
+				</div>
+
+				</h4>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<a class="btn btn-success" href="#">Hola</a>
+					<!-- <button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito({# platillo.id #})"> Agregar a Carrito </button> -->
+					<!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="request()">Agregar a Carrito</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+
+
+
+{% endblock %}

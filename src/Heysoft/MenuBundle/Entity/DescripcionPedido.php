@@ -56,10 +56,6 @@ class DescripcionPedido
      */
     private $carritos;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $platillos;
 
     /**
      * Constructor
@@ -68,7 +64,6 @@ class DescripcionPedido
     {
         $this->descripcion = "";
         $this->carritos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->platillos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -106,36 +101,32 @@ class DescripcionPedido
     }
 
     /**
-     * Add platillo
+     * @var \Heysoft\MenuBundle\Entity\Platillo
+     */
+    private $platillo;
+
+
+    /**
+     * Set platillo
      *
      * @param \Heysoft\MenuBundle\Entity\Platillo $platillo
      *
      * @return DescripcionPedido
      */
-    public function addPlatillo(\Heysoft\MenuBundle\Entity\Platillo $platillo)
+    public function setPlatillo(\Heysoft\MenuBundle\Entity\Platillo $platillo = null)
     {
-        $this->platillos[] = $platillo;
+        $this->platillo = $platillo;
 
         return $this;
     }
 
     /**
-     * Remove platillo
+     * Get platillo
      *
-     * @param \Heysoft\MenuBundle\Entity\Platillo $platillo
+     * @return \Heysoft\MenuBundle\Entity\Platillo
      */
-    public function removePlatillo(\Heysoft\MenuBundle\Entity\Platillo $platillo)
+    public function getPlatillo()
     {
-        $this->platillos->removeElement($platillo);
-    }
-
-    /**
-     * Get platillos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPlatillos()
-    {
-        return $this->platillos;
+        return $this->platillo;
     }
 }
