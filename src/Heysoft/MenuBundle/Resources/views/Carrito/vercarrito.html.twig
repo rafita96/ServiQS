@@ -7,34 +7,43 @@
 
 {% for platillo in platillos %}
 	<div class="panel panel-default">
-		<div class="panel-heading"><h2>{{ platillo.platillo }}</h2></div>
+		<div class="panel-heading"><h2>{{ platillo.platillo.platillo }}</h2></div>
 		
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-2"><img src="{{ asset('bundles/img/menu/' ~ platillo.imagen) }}" alt="{{ platillo.imagen }}" width="75px" /></div>
-				<h4>
-				<div class="col-md-1">Precio</div>
-				<div class="col-md-2">${{ platillo.precio }}</div>
-				
-				<div class="col-md-2">Cantidad</div>
-				<div class="col-md-2">
-					<button class="btn btn-success">-</button> 5 <button class="btn btn-success">+</button>
-				</div>
+				<table class="col-md-12" style="text-align:center">
+					<tr>
+						<td class="col-md-2" rowspan="2"><img src="{{ asset('bundles/img/menu/' ~ platillo.platillo.imagen) }}" alt="{{ platillo.platillo.imagen }}" width="75px" /></td>
 
-				</h4>
+						<td class="col-md-3"><h4>Precio: ${{ platillo.platillo.precio }}</h4></td>
+						<td class="col-md-3"><h4>Cantidad</h4></td>
+						<td rowspan="2" class="col-md-4"><button class="btn btn-primary">Editar</button> <button class="btn btn-primary">Eliminar</button></td>
+
+					</tr>
+					
+					<tr>
+
+					<td class="col-md-3"></td>
+					
+					
+					<td class="col-md-3">
+						<button class="btn btn-success">-</button> <span id="{{ 'carrito_cantidad_platillo_' ~ platillo.platillo.id }}">{{ platillo.cantidad }}</span> <button class="btn btn-success">+</button>
+					</td>
+
+					</h4>
+					</tr>
+				</table>
 			</div>
 
-			<div class="row">
+<!-- 			<div class="row">
 				<div class="col-md-4">
 					<a class="btn btn-success" href="#">Hola</a>
-					<!-- <button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito({# platillo.id #})"> Agregar a Carrito </button> -->
-					<!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="request()">Agregar a Carrito</button> -->
+					<button role="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="aCarrito({# platillo.id #})"> Agregar a Carrito </button>
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#aCar" onclick="request()">Agregar a Carrito</button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 {% endfor %}
-
-
 
 {% endblock %}

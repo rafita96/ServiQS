@@ -25,40 +25,6 @@ Heysoft\MenuBundle\Entity\Platillo:
             type: string
             length: 255
             nullable: true
-    manyToMany:
-        platilloschicos:
-            targetEntity: PlatilloChico
-            inversedBy: platillos
-            joinTable:
-                name: platillo_platillochico
-                joinColumns:
-                    platillo_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    platillochico_id:
-                        referencedColumnName: id
-        bebidas:
-            targetEntity: Bebida
-            inversedBy: platillos
-            joinTable:
-                name: platillo_bebida
-                joinColumns:
-                    platillo_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    bebida_id:
-                        referencedColumnName: id
-        platillosentradas:
-            targetEntity: PlatilloEntrada
-            inversedBy: platillos
-            joinTable:
-                name: platillo_platilloentrada
-                joinColumns:
-                    platillo_id:
-                        referencedColumnName: id 
-                inverseJoinColumns:
-                    platilloentrada_id:
-                        referencedColumnName: id
     manyToOne:
         categoria:
             targetEntity: Categoria

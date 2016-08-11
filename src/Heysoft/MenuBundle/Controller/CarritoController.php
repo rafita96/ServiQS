@@ -8,21 +8,39 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Heysoft\MenuBundle\Entity\DescripcionPedido;
 
+use Heysoft\MenuBundle\Resources\extra\Cantidad;
+
 class CarritoController extends Controller
 {
+
   public function verAction(Request $request)
   {
     $user = $this->getUser();
     $carrito = $user->getCarrito();
 
     $platillos = array();
+    $id = array();
     $descripciones = $carrito->getDescripciones()->toArray();
 
     foreach($descripciones as $descripcion)
     {
-      if(!in_array($descripcion->getPlatillo(),$platillos))
+      $platillo = $descripcion->getPlatillo();
+      if(!in_array($platillo->getId() , $id))
       {
-        array_push($platillos,$descripcion->getPlatillo());
+        array_push($id, $platillo->getId());
+        $cantidad = new Cantidad($platillo);
+        array_push($platillos, $cantidad);
+      }
+      else
+      {
+        foreach($platillos as $p)
+        {
+          if($p->getPlatillo() === $platillo)
+          {
+            $p->aumentar();
+            break;
+          }
+        }
       }
     }
 

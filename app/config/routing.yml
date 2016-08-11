@@ -1,3 +1,7 @@
+heysoft_admin:
+    resource: "@HeysoftAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 heysoft_menu:
     resource: "@HeysoftMenuBundle/Resources/config/routing.yml"
     prefix:   /
