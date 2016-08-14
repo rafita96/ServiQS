@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('HeysoftAdminBundle:Default:index.html.twig');
     }
+
+    public function listarPedidosAction()
+    {
+    	return $this->render('HeysoftAdminBundle:Pedidos:index.html.twig');
+    }
 }

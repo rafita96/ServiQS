@@ -16,3 +16,7 @@ heysoft_menu_carrito:
 heysoft_menu_agregar_carrito:
   path: /carrito/agregar/ajax/call/
   defaults: { _controller: HeysoftMenuBundle:Carrito:Agregar }
+
+heysoft_menu_quitar_carrito:
+  path: /carrito/quitar/ajax/call/
+  defaults: { _controller: HeysoftMenuBundle:Carrito:Quitar }

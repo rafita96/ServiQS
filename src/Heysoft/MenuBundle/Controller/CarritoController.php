@@ -17,6 +17,7 @@ class CarritoController extends Controller
   {
     $user = $this->getUser();
     $carrito = $user->getCarrito();
+    $total = 0;
 
     $platillos = array();
     $id = array();
@@ -42,9 +43,11 @@ class CarritoController extends Controller
           }
         }
       }
+
+      $total = $total + $platillo->getPrecio();
     }
 
-    return $this->render('HeysoftMenuBundle:Carrito:vercarrito.html.twig', array('carrito' => $carrito, 'platillos' => $platillos));
+    return $this->render('HeysoftMenuBundle:Carrito:vercarrito.html.twig', array('carrito' => $carrito, 'platillos' => $platillos, 'total' => $total));
   }
 
 	public function AgregarAction(Request $request)
@@ -70,8 +73,65 @@ class CarritoController extends Controller
 		  $em->persist($carrito);
       $em->flush($carrito);
 
-    	$response = array("code" => 100, "success" => true);
+      if( null !== $request->request->get('mas',null) )
+      {
+        $descripciones = $carrito->getDescripciones();
+        $cantidad = 0;
+        $total = 0;
 
+        foreach($descripciones as $descripcion)
+        {
+          if($descripcion->getPlatillo() === $platillo)
+          {
+            $cantidad = $cantidad + 1;
+          }
+
+          $total = $total + $descripcion->getPlatillo()->getPrecio();
+        }
+
+        $response = array("code" => 100, "success" => true, "cantidad" => $cantidad, "total" => $total);
+      }
+      else
+      {
+        $response = array("code" => 100, "success" => true);
+      }
+    	
+      return new JsonResponse($response);
+    }
+
+    public function QuitarAction(Request $request)
+    { 
+      $data = $request->request->get('id',null);
+
+      $repository = $this->getDoctrine()->getRepository('HeysoftMenuBundle:Platillo');
+
+      $user = $this->getUser();
+      $em = $this->getDoctrine()->getManager();
+
+      $carrito = $user->getCarrito();
+      $platillo = $repository->findOneById($data);
+
+      $descripciones = $carrito->getDescripciones();
+      $ultimo = null;
+      $cantidad = -1;
+      $total = $platillo->getPrecio()*-1;
+
+      foreach($descripciones as $descripcion)
+      {
+        if($descripcion->getPlatillo() === $platillo)
+        {
+          $ultimo = $descripcion;
+          $cantidad = $cantidad + 1;
+        }
+
+        $total = $total + $descripcion->getPlatillo()->getPrecio();
+      }
+
+      $em->remove($ultimo);
+      $em->flush();
+
+      $response = array("code" => 100, "success" => true, "cantidad" => $cantidad, "total" => $total);
+      
       return new JsonResponse($response);
     }
 }
